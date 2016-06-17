@@ -6,13 +6,11 @@
     <title>JSP IBA</title>
   </head>
   <body>
-    <c:if test="${x.matches('[0-9]+')}">
-      <c:forEach begin="1" end="${x}" varStatus="loop">
-        <h3>Hello IBA!</h3>
-      </c:forEach>
+    <c:if test="${x > 0}">
+        <c:forEach begin="1" end="${x}" varStatus="loop">
+            <h3>Hello IBA!</h3>
+        </c:forEach>
     </c:if>
-    <c:if test="${empty x}">
-        <h3>Hello IBA!</h3>
-    </c:if>     
+    
   </body>
 </html>
