@@ -13,5 +13,12 @@ Level 3
 - change url pattern in web.xml to "/hello"
 - change SimpleServlet : set attribute for loop in hello.jsp 
 
+Level 4
+- add dependency for spring framework
+- refactor SimpleServlet to SpringController : two methods for mapping url with parmeter and without
+- add spring-config.xml file 
+- change web.xml configuration 
+- some small changes in hello.jsp
+
 
 
