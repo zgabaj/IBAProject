@@ -2,16 +2,31 @@
 package eu.ibacz.webapp.entities;
 
 import java.util.Date;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import org.hibernate.validator.constraints.Length;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
- * @author Marek Zgabaj 
+ * @author Marek 
  */
 public class Student {
     
-    private String name;   
-    private String surname;    
+    
+    @Length(min = 1, max = 60)
+    private String name;
+    
+    @Length(min = 1, max = 60)
+    private String surname;
+    
+    @DateTimeFormat(pattern="dd-MM-yyyy")
+    @NotNull
+    @Past
     private Date bornDate;
+    
+    @NotNull
     private GenderEnum gender;
+
 
     public String getName() {
         return name;
