@@ -12,10 +12,11 @@ import org.springframework.format.annotation.DateTimeFormat;
  */
 public class Student {
     
-    
+    @Pattern(regexp = "[a-zA-Z]*")
     @Length(min = 1, max = 60)
     private String name;
     
+    @Pattern(regexp = "[a-zA-Z]*")
     @Length(min = 1, max = 60)
     private String surname;
     
