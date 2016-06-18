@@ -20,7 +20,8 @@ Level 4
 - change web.xml configuration 
 - some small changes in hello.jsp
 
-Level 5 
+Level 5
+- create simple class Student and GenderEnum
 - refactor SpringController to StudentController : tow methods for GET and POST request method
 - add tow new jsp :  one for input form and one for output
 - delete hello.jsp
