@@ -28,3 +28,11 @@ Level 5
 - add folder for jsp files and change config in spring-config.xml
 - change servlet name and url pattern in web.xml
 
+Level 6
+- add dependency hibernate-validator
+- add anotations to Student atributes
+- create folder for css style and link css to input jsp
+- create propertie for error messages
+- change input jsp 
+- setup anotation , message source and css resource in spring-config.xml
+- StudenController changes : add dateFormat , valide student and check if an error occurs
