@@ -83,9 +83,8 @@ public class Student {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 97 * hash + (this.name != null ? this.name.hashCode() : 0);
-        hash = 97 * hash + (this.surname != null ? this.surname.hashCode() : 0);
+        int hash = 7;
+        hash = 79 * hash + (this.id != null ? this.id.hashCode() : 0);
         return hash;
     }
 
@@ -98,14 +97,13 @@ public class Student {
             return false;
         }
         final Student other = (Student) obj;
-        if ((this.name == null) ? (other.name != null) : !this.name.equals(other.name)) {
-            return false;
-        }
-        if ((this.surname == null) ? (other.surname != null) : !this.surname.equals(other.surname)) {
+        if (this.id != other.id && (this.id == null || !this.id.equals(other.id))) {
             return false;
         }
         return true;
     }
+
+    
     
     
     
