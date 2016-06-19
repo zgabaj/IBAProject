@@ -9,11 +9,11 @@
         <table>
             <tr>
                 <td>Name</td>
-                <td>${name}</td>
+                <td>${student.name}</td>
             </tr>
             <tr>
                 <td>Surname</td>
-                <td>${surname}</td>
+                <td>${student.surname}</td>
             </tr>
             <tr>
                 <td>Born date</td>
@@ -21,7 +21,14 @@
             </tr>
             <tr>
                 <td>Gender</td>
-                <td>${gender}</td>
+                <td>${student.gender}</td>
+            </tr>
+            <tr>
+                <form:form method="GET" action="/simple-web-app/student" >
+                    <td colspan="4">
+                        <input type="submit" value="Student List"/>
+                    </td>
+                </form:form>
             </tr>
         </table>  
     </body>
