@@ -1,5 +1,7 @@
 # IBAProject
 
+I am using apache tomcat standalone container version:8.0.35
+
 Level 1-2
 - create maven project in Netbeans 
 - create SimpleServlet 
@@ -36,3 +38,14 @@ Level 6
 - change input jsp 
 - setup anotation , message source and css resource in spring-config.xml
 - StudenController changes : add dateFormat , valide student and check if an error occurs
+
+Level 7
+- create StudentService and StudentServiceImpl
+- add Id attribute to Student and change equals and hash method
+- change mapping in spring-config.xml to "/"
+- add new jsp files : studentEdit, studentsList
+- smole changes in studentInput and studentOutput jsps
+- add StartupListener to setup map for students and studentManager
+- change studentCntroller : "/student" show studens info , "/add" for adding new student
+                            from "/student" you can add new student, edit or view student data
+
