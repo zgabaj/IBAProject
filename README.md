@@ -49,3 +49,15 @@ Level 7
 - change studentCntroller : "/student" show studens info , "/add" for adding new student
                             from "/student" you can add new student, edit or view student data
 
+Level 8
+- change return value of ShowAllStudent method in StudentServce interface to Collection
+- create DAO interface and DAOImpl
+- create StudentServiceDBImpl 
+- add anotations in Student class
+- fix error meassage for wrong date format 
+- change student controller to use new StudentService to sotre data in database
+- create sql script for table student
+- create hibernate.cfg.xml and log4j.xml configuration files
+- add database configuration to spring-config.xml
+- smole changes in jsp files
+
