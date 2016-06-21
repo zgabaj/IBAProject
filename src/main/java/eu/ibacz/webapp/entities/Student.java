@@ -1,7 +1,15 @@
 
 package eu.ibacz.webapp.entities;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -11,13 +19,13 @@ import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
 
 /**
- * @author Marek 
+ *
+ * @author Marek Zgabaj marek.zgabaj@gmail.com
  */
+@Entity
 public class Student {
-    
-    @Min(value = 0)
-    @Digits(integer = 10, fraction = 0)
-    @NotNull
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     
     @Pattern(regexp = "[a-zA-Z]*")
@@ -28,13 +36,27 @@ public class Student {
     @Length(min = 1, max = 60)
     private String surname;
     
-    @DateTimeFormat(pattern="dd-MM-yyyy")
+    @DateTimeFormat(pattern="dd/MM/yyyy")
     @NotNull
     @Past
     private Date bornDate;
     
     @NotNull
+    @Enumerated(EnumType.STRING)
     private GenderEnum gender;
+    
+    public Student(){}
+
+    public Student(Long id, String name, String surname, 
+            Date bornDate, GenderEnum gender) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.bornDate = bornDate;
+        this.gender = gender;
+    }
+
 
     public Long getId() {
         return id;
@@ -84,7 +106,7 @@ public class Student {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 79 * hash + (this.id != null ? this.id.hashCode() : 0);
+        hash = 79 * hash + (    this.id != null ? this.id.hashCode() : 0);
         return hash;
     }
 

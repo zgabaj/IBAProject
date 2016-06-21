@@ -28,7 +28,7 @@
                     </tr>
                     <tr>
                         <td><form:label path="bornDate">Born date</form:label></td>
-                        <td><form:input path="bornDate" placeholder="dd-MM-yyyy"
+                        <td><form:input path="bornDate" placeholder="dd/MM/yyyy"
                                     value="${bornDate}"/></td>
                         <td><form:errors path="bornDate" cssClass="error" /></td>
                     </tr>

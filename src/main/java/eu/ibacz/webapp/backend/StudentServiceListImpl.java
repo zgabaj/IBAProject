@@ -6,6 +6,7 @@
 package eu.ibacz.webapp.backend;
 
 import eu.ibacz.webapp.entities.Student;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -33,8 +34,8 @@ public class StudentServiceListImpl implements StudentService {
         students.put(student.getId(), student);
     }
 
-    public Map<Long, Student> showAllStudents() {
-        return students;
+    public Collection showAllStudents() {
+        return (Collection) students;
     }
 
     public Student getById(Long id) {

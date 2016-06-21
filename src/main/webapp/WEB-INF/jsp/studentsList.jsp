@@ -23,17 +23,17 @@
             <c:forEach items = "${students}" var="student">
                 <tr>
                     <td>
-                         <c:out value="${student.value.id}"/>
-                         <c:out value="${student.value.name}"/>
-                         <c:out value="${student.value.surname}"/>
+                         <c:out value="${student.id}"/>
+                         <c:out value="${student.name}"/>
+                         <c:out value="${student.surname}"/>
 
                     </td>
-                    <form:form method="POST" action="/simple-web-app/edit?id=${student.key}">           
+                    <form:form method="POST" action="/simple-web-app/edit?id=${student.id}">           
                         <td colspan="4">
                             <input type="submit" value="Edit"/>
                         </td>
                     </form:form>
-                    <form:form method="POST" action="/simple-web-app/view?id=${student.key}">           
+                    <form:form method="POST" action="/simple-web-app/view?id=${student.id}">           
                         <td colspan="4">
                             <input type="submit" value="View"/>
                         </td>
