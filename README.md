@@ -67,5 +67,3 @@ Level 9
 - create js folder and add jquery library, validation plugin and datepicker
 - create js script, studentValidation.js for validation for input 
 - add mapping for resources in spring-config.xml
-- 
-
