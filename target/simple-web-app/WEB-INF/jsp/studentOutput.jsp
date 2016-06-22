@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
     <head>
-        <title>Spring MVC</title>
+        <title>Student Info</title>
     </head>
     <body>
         <h2>Student Information</h2>
@@ -25,7 +25,7 @@
             </tr>
             <tr>
                 <form:form method="GET" action="/simple-web-app/student" >
-                    <td colspan="4">
+                    <td colspan="2">
                         <input type="submit" value="Student List"/>
                     </td>
                 </form:form>
