@@ -61,3 +61,11 @@ Level 8
 - add database configuration to spring-config.xml
 - smole changes in jsp files
 
+Level 9
+- fix wrong layout in jsps
+- add css style for error mesages
+- create js folder and add jquery library, validation plugin and datepicker
+- create js script, studentValidation.js for validation for input 
+- add mapping for resources in spring-config.xml
+- 
+
