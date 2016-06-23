@@ -1,20 +1,22 @@
-
 package eu.ibacz.webapp.entities;
 
-import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import eu.ibacz.webapp.rest.JsonDateDeserializer;
+import eu.ibacz.webapp.rest.JsonDateSerializer;
+
 import java.util.Date;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
+
 import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -22,32 +24,37 @@ import org.springframework.format.annotation.DateTimeFormat;
  *
  * @author Marek Zgabaj marek.zgabaj@gmail.com
  */
+@JsonAutoDetect
 @Entity
 public class Student {
+
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @Pattern(regexp = "[a-zA-Z]*")
     @Length(min = 1, max = 60)
+    @NotNull
     private String name;
-    
+
     @Pattern(regexp = "[a-zA-Z]*")
     @Length(min = 1, max = 60)
+    @NotNull
     private String surname;
-    
-    @DateTimeFormat(pattern="dd/MM/yyyy")
+
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     @NotNull
     @Past
     private Date bornDate;
-    
+
     @NotNull
     @Enumerated(EnumType.STRING)
     private GenderEnum gender;
-    
-    public Student(){}
 
-    public Student(Long id, String name, String surname, 
+    public Student() {
+    }
+
+    public Student(Long id, String name, String surname,
             Date bornDate, GenderEnum gender) {
         super();
         this.id = id;
@@ -56,7 +63,6 @@ public class Student {
         this.bornDate = bornDate;
         this.gender = gender;
     }
-
 
     public Long getId() {
         return id;
@@ -82,10 +88,12 @@ public class Student {
         this.surname = surname;
     }
 
+    @JsonSerialize(using=JsonDateSerializer.class)    
     public Date getBornDate() {
         return bornDate;
     }
 
+    @JsonDeserialize(using=JsonDateDeserializer.class)    
     public void setBornDate(Date bornDate) {
         this.bornDate = bornDate;
     }
@@ -106,7 +114,7 @@ public class Student {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 79 * hash + (    this.id != null ? this.id.hashCode() : 0);
+        hash = 79 * hash + (this.id != null ? this.id.hashCode() : 0);
         return hash;
     }
 
@@ -125,8 +133,4 @@ public class Student {
         return true;
     }
 
-    
-    
-    
-    
 }

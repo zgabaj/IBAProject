@@ -1,7 +1,7 @@
 package eu.ibacz.webapp.backend.dao;
 
 import eu.ibacz.webapp.entities.Student;
-import java.util.Collection;
+import java.util.List;
 
 /**
  *
@@ -46,7 +46,7 @@ public interface StudentDAO {
      * 
      * @return list of all students
     **/
-    public Collection showAllStudents();
+    public List showAllStudents();
         
     
 }

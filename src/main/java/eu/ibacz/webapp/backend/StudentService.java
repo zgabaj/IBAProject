@@ -1,7 +1,7 @@
 
 package eu.ibacz.webapp.backend;
 import eu.ibacz.webapp.entities.Student;
-import java.util.Collection;
+import java.util.List;
 
 /**
  *
@@ -46,6 +46,6 @@ public interface StudentService {
      * 
      * @return list of all students
     **/
-    public Collection showAllStudents();
+    public List showAllStudents();
         
 }

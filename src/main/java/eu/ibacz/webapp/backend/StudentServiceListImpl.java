@@ -6,7 +6,8 @@
 package eu.ibacz.webapp.backend;
 
 import eu.ibacz.webapp.entities.Student;
-import java.util.Collection;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -16,10 +17,12 @@ import java.util.Map;
  */
 public class StudentServiceListImpl implements StudentService {
 
-    private Map<Long, Student> students;
+    static Map<Long, Student> students = getMapOfStudents();
 
-    public StudentServiceListImpl(Map<Long, Student> students) {
-        this.students = students;
+    public StudentServiceListImpl() {
+        if(students == null){
+            students = new HashMap<Long, Student>();
+        }
     }
 
     public void addStudent(Student student) {
@@ -34,13 +37,19 @@ public class StudentServiceListImpl implements StudentService {
         students.put(student.getId(), student);
     }
 
-    public Collection showAllStudents() {
-        return (Collection) students;
+    public List showAllStudents() {
+        return  new ArrayList(students.values());
     }
 
     public Student getById(Long id) {
         return students.get(id);
     }
+
+    static Map<Long, Student> getMapOfStudents() {
+        return students;
+    }
+    
+    
 
  
 

@@ -6,7 +6,7 @@ import eu.ibacz.webapp.entities.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import java.util.Collection;
+import java.util.List;
 
 /**
  *
@@ -14,9 +14,10 @@ import java.util.Collection;
  */
 
 @Service
-public class StudentServiceDBImpl implements StudentService {
-	@Autowired
-	private StudentDAO studentDAO;
+public class StudentServiceDBImpl implements StudentService {   
+   
+    @Autowired
+    private StudentDAO studentDAO;
     
     @Transactional
     public void addStudent(Student student) {
@@ -39,7 +40,7 @@ public class StudentServiceDBImpl implements StudentService {
     }
 
     @Transactional
-    public Collection showAllStudents() {
+    public List showAllStudents() {
         return studentDAO.showAllStudents();
     }
 
