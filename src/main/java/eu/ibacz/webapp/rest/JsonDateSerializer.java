@@ -32,6 +32,4 @@ public class JsonDateSerializer extends JsonSerializer<Date> {
         gen.writeString(formattedDate);
     }
 
-   
-
 }

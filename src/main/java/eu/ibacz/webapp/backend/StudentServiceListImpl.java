@@ -13,7 +13,7 @@ import java.util.Map;
 
 /**
  *
- * @author Marek
+ * @author Marek Zgabaj marek.zgabaj@gmail.com
  */
 public class StudentServiceListImpl implements StudentService {
 

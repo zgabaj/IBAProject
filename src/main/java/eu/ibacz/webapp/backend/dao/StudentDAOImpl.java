@@ -13,8 +13,8 @@ import java.util.List;
  */
 @Repository
 public class StudentDAOImpl implements StudentDAO {
-	@Autowired
-	private SessionFactory session;
+    @Autowired
+    private SessionFactory session;
 	
     @Override
     public void addStudent(Student student) {
