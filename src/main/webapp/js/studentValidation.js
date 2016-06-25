@@ -13,7 +13,7 @@ $(document).ready(function () {
             },
             bornDate: {
                 required: true,
-                dateValidator: true,
+                dateValidator: true
             },
             gender: "required"
 
@@ -54,6 +54,7 @@ $(document).ready(function () {
     //Date picker
     $(function () {
         $("#datepicker").datepicker({
+            changeYear: true,
             maxDate: "0d 0m 0w",
             dateFormat: "dd/mm/yy"
 
@@ -78,7 +79,7 @@ $(document).ready(function () {
 	//Valide correct format of date
     function isDate(txtDate)
     {  
-        var currVal = txtDate
+        var currVal = txtDate;
         if (currVal == '')
             return false;
             
