@@ -75,3 +75,8 @@ Level 10
 - create JsonDateDeserializer and JsonDateSerializer and add anotation in Student
 - remove StartUpListener
 - add configuration for JSON plugin and JSON connverter in spring-config.xml
+
+Level 11
+- Create IllegalEntityException and add validation on Service layer
+- Crate student builder fro tests
+- Create Unit test for Service layer
